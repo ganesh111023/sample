@@ -34,7 +34,12 @@ gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+ 	gem 'byebug'
+   # Use Capistrano for deployment
+  gem 'capistrano', '~> 3.4'
+  gem 'capistrano-rails', '~> 1.1', '>= 1.1.5'
+  gem 'capistrano-rvm', '~> 0.1.2'
+  gem 'capistrano-passenger', '~> 0.2.0'
 end
 
 group :development do
