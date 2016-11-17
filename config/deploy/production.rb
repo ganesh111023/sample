@@ -1,6 +1,6 @@
 set :stage, :production
-server '54.145.134.181', user: 'deploy', roles: %w{web app db}
-set :branch,  'sample-dep'
+server '54.162.57.111', user: 'ubuntu', roles: %w{web app db}
+set :branch,  'master'
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary

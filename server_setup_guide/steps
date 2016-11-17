@@ -1,0 +1,78 @@
+1) Created and instance on aws to host the site - http://devoncmather.com/setting-aws-ec2-instance-lamp-git/
+
+2) ssh into server.
+  A) ssh ubuntu@54.173.73.50 -i /home/rails/sqoop-key.pem
+  B) chmod 600 /home/rails/sqoop-key.pem
+  C) ssh ubuntu@54.173.73.50 -i /home/rails/sqoop-key.pem
+
+3) install initial required software packages.
+  sudo top
+  sudo apt-get update
+  sudo apt-get install build-essential
+  sudo apt-get install curl git vim g++
+  
+
+4) install rvm
+  A) \curl -sSL https://get.rvm.io | bash -s stable --rails
+    (It will install rvm and required packages for rvm.)
+    Also you can refer this doc - https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-14-04-using-rvm
+    
+  B) To start using RVM you need to run `source /home/ubuntu/.rvm/scripts/rvm`
+  
+   
+5) Installing Specific Ruby and Rails Versions
+  A) rvm install ruby_version
+
+6) install database server (Like mysql, postgres etc.)
+  (You can use this link for installation - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04)
+  a) postgres - 
+    create postgres user                        -  "sudo -i -u postgres"
+    and then connect to the PostgreSql terminal -  "psql"
+
+  DB creads for Brian's AWS host:
+  DB: postgres
+  un: postgres
+  password: sqoop
+  
+  DB: mysql
+  un: root
+  password: root
+  
+  b) installing mysql - 
+     sudo apt-get install mysql-server --fix-missing --fix-broken
+     sudo apt-get install libmysqlclient-dev
+     (https://help.ubuntu.com/12.04/serverguide/mysql.html)
+     
+7) Follow steps to install mamcache:
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-14-04
+Note: If you require mamcache for your application.
+
+8) Install nginx as web server:
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-14-04-lts
+
+9) Add capistrano and unicorn gems to gem file.
+
+10) run 'bundle install' on terminal.
+
+11) https://www.youtube.com/watch?v=WBPV4vjzcjQ
+
+
+
+
+Errors while deploying : - 
+========================
+
+ExecJS::RuntimeUnavailable: Could not find a JavaScript runtime
+---------------------------------------------------------------
+
+http://stackoverflow.com/questions/6282307/execjs-and-could-not-find-a-javascript-runtime
+sudo apt-get install nodejs
+
+One more recommendation I’d like to make is that you use binstubs. You can set your application up with binstubs by running bundle --binstubs. This will create a bin/ directory in your application root with all of the executables for the gems in your Gemfile. Having binstubs will make development easier: you can set your PATH by add the following line to your ~/.bashrc or ~/.bash_profile:
+PATH=./bin:$PATH
+-==============================================================================================
+https://www.youtube.com/watch?v=WBPV4vjzcjQ
+https://gorails.com/setup/ubuntu/14.04
+
+
+

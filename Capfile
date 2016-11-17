@@ -22,6 +22,7 @@ require 'capistrano/deploy'
  require 'capistrano/rails'
  require 'capistrano/rails/assets'
  require 'capistrano/rails/migrations'
+ require 'capistrano/passenger'
  set :rvm_type, :user
  set :rvm_ruby_version, '2.2.1'
 
