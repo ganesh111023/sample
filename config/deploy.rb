@@ -33,8 +33,6 @@ set :repo_url, 'git@github.com:ganesh111023/sample.git'
 
 # Default value for keep_releases is 5
 
-set :deploy_to, '/home/ubuntu/sample'
-
 # Default value for :linked_files is []
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 

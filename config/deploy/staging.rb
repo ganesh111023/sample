@@ -1,5 +1,5 @@
-set :stage, :production
-set :deploy_to, '/home/ubuntu/sample'
+set :stage, :staging
+set :deploy_to, '/home/ubuntu/staging'
 server '54.162.57.111', user: 'ubuntu', roles: %w{web app db}
 set :branch,  'master'
 # Simple Role Syntax
